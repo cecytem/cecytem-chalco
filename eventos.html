@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Cecytem Plantel Chalco</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estilos/eventos.css">
+    <link rel="stylesheet" href="https://fonts.google.com/icons" />
+</head>
+
+<body>
+
+    <!--cabeza de la pagina, aqui estan el logo y el titulo (para dar espacio al menu de opciones, en esta misma se implemento la barra de busquedas)-->
+    <header>
+        <div class="logo-titulo">
+            <div class="marco-logo">
+              <img src="imagenes/logo cecytem.png" />
+            </div>
+            <h1>Cecytem</h1>
+        </div>
+        
+        <div class="buscador">
+            <form action="#" method="get">
+               <input type="search" placeholder="buscar" />
+               <img src="iconos/busqueda.svg" class="icono"/>
+            </form>
+        </div>
+    </header>
+
+    <!--barra de busquedas (menu de busquedas con links al resto de paginas)-->
+
+    <div class="contenido-principal">
+    <aside>
+
+        <details class="menu-desplegable">
+            <summary>
+                  <img src="iconos/menu.svg" class="icono" />
+                <span class="texto">Opciones</span>
+            </summary>
+
+            <nav class="listas-enlaces">
+                <ul>
+                    <li><a href="index.html"><span class="texto">inicio</span></a></li>
+                    <li><a href="institucion.html"><span class="texto">información de la institución</a></span></li>
+                    <li><a href="informacion.html"><span class="texto">información escolar</a></span></li>
+                </ul>
+            </nav>
+        </details>
+
+        <!--Sección de Ajustes -->
+        <details>
+            <summary>
+                <img src="iconos/configuracion.svg" class="icono"/>
+                <span class="texto">Ajustes</span>
+            </summary>
+
+           <div class="contenido-ajustes">
+              <button type="button" id="btn-modo-oscuro">
+                 <img src="iconos/modo.oscuro.svg" alt="" class="icono">
+                 <span class="texto">Modo Oscuro</span>
+              </button>
+           </div>
+        </details> 
+    </aside> 
+
+    <main>
+        <div class="contenedor-muro">
+
+            <div class="cabecera-muro">
+                <div>
+                    <h2>Eventos y Actividades del Plantel</h2>
+                    <p>Da clic en cualquier cartel para ampliarlo en pantalla completa.</p>
+                </div>
+                <a href="informacion.html" class="boton-regresar">← Regresar</a>
+            </div>
+
+            <section class="muro-formas">
+
+                <article class="cartel largo">
+                    <img src="carteles-eventos/cartel-largo.png" alt="Evento Principal">
+                </article>
+
+                <article class="cartel ancho-arriba">
+                    <img src="carteles-eventos/cartel-ancho-arriba.png" alt="Evento Vertical">
+                </article>
+
+                <article class="cartel ancho-anajo">
+                    <img src="carteles-eventos/cartel-ancho-abajo.png" alt="Banner de Evento">
+                </article>
+
+                <article class="cartel video">
+                    <video src="carteles-eventos/video.mp4" controls playsinline></video>
+                </article>
+
+            </section>
+
+    </main>
+    
+    <div id="visor-modal" class="visor-modal">
+    <button type="button" id="cerrar-visor" class="cerrar-visor">&times;</button>
+    <img id="imagen-ampliada" class="imagen-ampliada" src="" alt="Cartel ampliado">
+</div>
+
+<script src="script.js"></script> 
+
+<script>
+        const visorModal = document.getElementById('visor-modal');
+        const imagenAmpliada = document.getElementById('imagen-ampliada');
+        const cerrarVisor = document.getElementById('cerrar-visor');
+        const carteles = document.querySelectorAll('.cartel img');
+
+        carteles.forEach(img => {
+            img.addEventListener('click', () => {
+                imagenAmpliada.src = img.src;
+                visorModal.classList.add('activo');
+            });
+        });
+
+        function ocultarVisor() {
+            visorModal.classList.remove('activo');
+        }
+
+        cerrarVisor.addEventListener('click', ocultarVisor);
+        visorModal.addEventListener('click', (e) => {
+            if (e.target === visorModal) ocultarVisor();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') ocultarVisor();
+        });
+    </script>
+
+</body>
+</html>

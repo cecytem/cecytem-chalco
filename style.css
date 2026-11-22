@@ -1,0 +1,518 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.icono {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    object-fit: contain;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+body {
+    background-color: #f4f6f5;
+    color: #333333;
+}
+
+header {
+
+    background-color: #006837;
+    color: #ffffff;
+    height: 100px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid #004d28;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+
+    /* AGREGA ESTAS 3 LÍNEAS PARA FIJAR LA CABECERA */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-titulo {
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+}
+
+.marco-logo {
+    height: 75px;
+    width: 75px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    border: 2px solid #004d28;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 13px; 
+}
+
+.marco-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+.logo-titulo h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+.buscador form{
+
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 25px;
+    padding: 8px 18px;
+
+}
+
+.buscador input {
+
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 240px;
+    font-size: 16px;
+    width: 280px;
+    color: #333333;
+}
+
+.buscador button {
+
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding-left: 8px;
+}
+
+
+aside {
+
+    width: 70px; 
+    background-color: #ffffff;
+    border-right: 1px solid #e0e0e0;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: width 0.3s ease; 
+    overflow-x: hidden;
+
+    position: sticky;
+    top: 100px;
+    height: calc(100vh - 100px);
+
+}
+
+aside:has(details[open]) {
+    width: 280px; 
+}
+
+aside .texto {
+    display: none;
+}
+
+aside details[open] .texto {
+    display: inline;
+}
+
+aside summary {
+
+    list-style: none; 
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra el engrane en el círculo */
+    width: 50px;             /* Mismo ancho y alto para hacer el círculo */
+    height: 50px;
+    padding: 0;
+    background-color: #e8f5e9;
+    color: #006837;
+    border-radius: 50%;      /* Forma circular */
+    font-weight: 600;
+    transition: all 0.3s ease; /* Anima el cambio de círculo a barra */
+}
+
+aside summary::-webkit-details-marker {
+    display: none;
+}
+
+.listas-enlaces {
+    margin-top: 10px;
+    padding: 4px;
+}
+
+.listas-enlaces ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px; 
+}
+
+.listas-enlaces li a {
+    display: block;
+    padding: 10px 14px;
+    background-color: #f8f9fa; 
+    color: #333333;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px; 
+    border: 1px solid #e9ecef; 
+    transition: all 0.25s ease; 
+    white-space: nowrap;
+}
+
+.listas-enlaces li a:hover {
+    background-color: #006837;
+    color: #ffffff; 
+    border-color: #006837;
+    transform: translateX(4px); 
+    box-shadow: 0 4px 8px rgba(0, 104, 55, 0.2); 
+}
+
+.listas-enlaces li a:active {
+    transform: translateX(2px) scale(0.98);
+}
+
+.ajustes-desplegable {
+    margin-top: auto;
+}
+
+.contenido-ajustes {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contenido-ajustes button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: none;
+    border: none;
+    padding: 8px 10px;
+    font-size: 14px;
+    color: #444444;
+    cursor: pointer;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.contenido-ajustes button:hover {
+    background-color: #f0f0f0;
+}
+
+aside .icono {
+    font-size: 20px;
+    min-width: 30px;
+    text-align: center;
+}
+
+aside details::details-content {
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.3s ease, transform 0.3s ease, content-visibility 0.3s allow-discrete;
+}
+
+aside details[open] summary {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0 15px;
+    gap: 15px;
+    border-radius: 25px;
+}
+
+aside details[open]::details-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   ESTILOS DE ACCESIBILIDAD (MODO OSCURO Y LETRAS)
+   ========================================= */
+
+body.modo-oscuro {
+    background-color: #121212;
+    color: #e4e6eb;
+}
+
+body.modo-oscuro header {
+    background-color: #004223;
+    border-bottom-color: #002b17;
+}
+
+body.modo-oscuro aside {
+    background-color: #1e1e1e;
+    border-right-color: #333333;
+}
+
+body.modo-oscuro aside summary {
+    background-color: #1b3828;
+    color: #4ade80;
+}
+
+body.modo-oscuro .listas-enlaces li a,
+body.modo-oscuro .contenido-ajustes button {
+    background-color: #2a2a2a;
+    color: #e4e6eb;
+    border-color: #3a3a3a;
+}
+
+body.modo-oscuro .listas-enlaces li a:hover,
+body.modo-oscuro .contenido-ajustes button:hover {
+    background-color: #006837;
+    color: #ffffff;
+}
+
+body.modo-oscuro aside .icono {
+    filter: invert(1) brightness(1.5);
+}
+
+body.modo-oscuro .tarjeta-imagen {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.contenido-principal {
+    display: flex;
+    align-items: stretch; /* Hace que la barra lateral llegue hasta abajo */
+    min-height: calc(100vh - 100px); /* Ocupa toda la altura restante debajo del header */
+}
+
+main {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.columna-noticias {
+    display: grid;
+    width: 100%;
+    max-width: 1200px;
+    grid-template-columns: 1.6fr 1fr;
+    grid-template-rows: repeat(2, 270px);
+    gap: 24px;
+}
+
+.columna-noticias article {
+    position: relative;
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 104, 55, 0.15);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                box-shadow 0.35s ease, 
+                border-color 0.35s ease;
+}
+
+.columna-noticias article:nth-child(3) {
+    grid-column: 2;
+    grid-row: 1 / 3;
+}
+
+.columna-noticias article img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.columna-noticias article:hover {
+    transform: translateY(-5px);
+    border-color: #006837;
+    box-shadow: 0 14px 30px rgba(0, 104, 55, 0.22);
+}
+
+.columna-noticias article:hover img {
+    transform: scale(1.06);
+}
+
+body.modo-oscuro .columna-noticias article {
+    background-color: #1e1e1e;
+    border-color: rgba(74, 222, 128, 0.2);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+body.modo-oscuro .columna-noticias article:hover {
+    border-color: #4ade80;
+    box-shadow: 0 12px 28px rgba(74, 222, 128, 0.18);
+}
+
+.visor-modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.88);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.visor-modal.activo {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.imagen-ampliada {
+    max-width: 90%;
+    max-height: 88vh;
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.visor-modal.activo .imagen-ampliada {
+    transform: scale(1);
+}
+
+.cerrar-visor {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 28px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+.cerrar-visor:hover {
+    background: #006837;
+}
+
+/* =========================================
+   BUSCADOR Y DESPLEGABLE DE SUGERENCIAS
+   ========================================= */
+.buscador {
+    position: relative;
+}
+
+.buscador input {
+    width: 360px;
+}
+
+.resultados-busqueda {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 440px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    z-index: 999;
+    display: none;
+    max-height: 420px;
+    overflow-y: auto;
+}
+
+.resultados-busqueda.activo {
+    display: block;
+}
+
+.item-busqueda {
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.2s ease;
+}
+
+.item-busqueda:last-child {
+    border-bottom: none;
+}
+
+.item-busqueda:hover {
+    background-color: #e8f5e9;
+}
+
+.titulo-opcion {
+    font-size: 15px;
+    font-weight: 600;
+    color: #222222;
+}
+
+.etiqueta-opcion {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: #006837;
+    color: #ffffff;
+    padding: 4px 10px;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+.sin-resultados {
+    padding: 16px;
+    font-size: 14px;
+    color: #666666;
+    text-align: center;
+}
+
+/* Modo Oscuro para el desplegable */
+body.modo-oscuro .resultados-busqueda {
+    background-color: #1e1e1e;
+    border-color: #333333;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65);
+}
+
+body.modo-oscuro .item-busqueda {
+    border-bottom-color: #2c2c2c;
+}
+
+body.modo-oscuro .item-busqueda:hover {
+    background-color: #1b3828;
+}
+
+body.modo-oscuro .titulo-opcion {
+    color: #f0f0f0;
+}
+
+body.modo-oscuro .etiqueta-opcion {
+    background-color: #4ade80;
+    color: #121212;
+}

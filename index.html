@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Cecytem Plantel Chalco</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estilos/inicio.css">
+    <link rel="stylesheet" href="https://fonts.google.com/icons" />
+</head>
+
+<body>
+
+    <!--cabeza de la pagina, aqui estan el logo y el titulo (para dar espacio al menu de opciones, en esta misma se implemento la barra de busquedas)-->
+    <header>
+        <div class="logo-titulo">
+            <div class="marco-logo">
+              <img src="imagenes/logo cecytem.png" />
+            </div>
+            <h1>Cecytem</h1>
+        </div>
+        
+        <div class="buscador">
+            <form action="#" method="get">
+               <input type="search" placeholder="buscar" />
+               <img src="iconos/busqueda.svg" class="icono"/>
+            </form>
+        </div>
+    </header>
+
+    <!--barra de busquedas (menu de busquedas con links al resto de paginas)-->
+
+    <div class="contenido-principal">
+    <aside>
+
+        <details class="menu-desplegable">
+            <summary>
+                  <img src="iconos/menu.svg" class="icono" />
+                <span class="texto">Opciones</span>
+            </summary>
+
+            <nav class="listas-enlaces">
+                <ul>
+                    <li><a href="index.html"><span class="texto">inicio</span></a></li>
+                    <li><a href="institucion.html"><span class="texto">información de la institución</a></span></li>
+                    <li><a href="informacion.html"><span class="texto">información escolar</a></span></li>
+                </ul>
+            </nav>
+        </details>
+
+        <!--Sección de Ajustes -->
+        <details>
+            <summary>
+                <img src="iconos/configuracion.svg" class="icono"/>
+                <span class="texto">Ajustes</span>
+            </summary>
+
+           <div class="contenido-ajustes">
+              <button type="button" id="btn-modo-oscuro">
+                 <img src="iconos/modo.oscuro.svg" alt="" class="icono">
+                 <span class="texto">Modo Oscuro</span>
+              </button>
+           </div>
+          
+        </details> 
+
+    </aside> 
+
+    <!--area de columnas (imagenes del plantel o noticias, zona actualizable)-->
+    <main>
+        <div class="zona-inicio">
+           <div class="columna-noticias">
+              <article class="tarjeta-imagen">
+                  <img src="imagenes/PAG CHALCO.png">
+              </article>
+              <article>
+                  <img src="imagenes/explanada filtro.png">
+              </article>
+              <article>
+                  <img src="imagenes/sala de computo desenfoque.png">
+              </article>
+           </div>
+
+           <div class="caja-derecha">
+            <div class="tarjeta-reloj">
+                <span class="saludo-tiempo" id="saludo-dinamico">Bienvenido</span>
+                <div class="hora-actual" id="reloj-hora">00:00:00</div>
+                <div class="fecha-actual" id="reloj-fecha">Cargando fecha...</div>
+            </div>
+
+            <div class="tarjeta-frases">
+                <div class="frases-encabezado">
+                    <span class="etiqueta-plantel">CECyTEM Chalco</span>
+                    <button type="button" id="btn-siguiente-frase">↻</button>
+                </div>
+                <p id="texto-frase" class="texto-frase">"Ciencia y tecnología al servicio de la sociedad."</p>
+                <span id="autor-frase" class="autor-frase">Lema Institucional</span>
+            </div>
+        </div>
+
+        </div>
+    </main>
+    </div>
+
+    <div id="visor-modal" class="visor-modal">
+    <button type="button" id="cerrar-visor" class="cerrar-visor">&times;</button>
+    <img id="imagen-ampliada" class="imagen-ampliada" src="" alt="Anuncio ampliado">
+</div>
+
+<script src="script.js"></script> 
+    <script>
+         // RELOJ Y SALUDO DINÁMICO
+        function actualizarReloj() {
+            const ahora = new Date();
+            const horaNum = ahora.getHours();
+
+            const horas = String(horaNum).padStart(2, '0');
+            const minutos = String(ahora.getMinutes()).padStart(2, '0');
+            const segundos = String(ahora.getSeconds()).padStart(2, '0');
+            document.getElementById('reloj-hora').textContent = `${horas}:${minutos}:${segundos}`;
+
+            const opcionesFecha = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const fechaTexto = ahora.toLocaleDateString('es-MX', opcionesFecha);
+            document.getElementById('reloj-fecha').textContent = fechaTexto.charAt(0).toUpperCase() + fechaTexto.slice(1);
+
+            const saludoEl = document.getElementById('saludo-dinamico');
+            if (horaNum >= 6 && horaNum < 12) {
+                saludoEl.textContent = 'Buenos días';
+            } else if (horaNum >= 12 && horaNum < 19) {
+                saludoEl.textContent = 'Buenas tardes';
+            } else {
+                saludoEl.textContent = 'Buenas noches';
+            }
+        }
+        setInterval(actualizarReloj, 1000);
+        actualizarReloj();
+
+        // FRASES ROTATIVAS DEL PLANTEL
+        const frasesPlantel = [
+            { texto: '"Ciencia y tecnología al servicio de la sociedad."', autor: 'Lema Institucional CECyTEM' },
+            { texto: '"Formando jóvenes con excelencia académica, valores y visión de futuro."', autor: 'Plantel Chalco' },
+            { texto: '"El conocimiento técnico es la herramienta para transformar nuestro entorno."', autor: 'Comunidad Estudiantil' },
+            { texto: '"Orgullo, disciplina y compromiso en cada paso de tu formación."', autor: 'Identidad CECyTEM' }
+        ];
+
+        let indiceFrase = 0;
+        const textoFraseEl = document.getElementById('texto-frase');
+        const autorFraseEl = document.getElementById('autor-frase');
+        const btnSiguienteFrase = document.getElementById('btn-siguiente-frase');
+
+        function cambiarFrase() {
+            textoFraseEl.style.opacity = 0;
+            autorFraseEl.style.opacity = 0;
+            
+            setTimeout(() => {
+                indiceFrase = (indiceFrase + 1) % frasesPlantel.length;
+                textoFraseEl.textContent = frasesPlantel[indiceFrase].texto;
+                autorFraseEl.textContent = frasesPlantel[indiceFrase].autor;
+                textoFraseEl.style.opacity = 1;
+                autorFraseEl.style.opacity = 1;
+            }, 300);
+        }
+
+        btnSiguienteFrase.addEventListener('click', cambiarFrase);
+        setInterval(cambiarFrase, 8000);
+
+        // VISOR DE PANTALLA COMPLETA AL DAR CLIC EN LAS FOTOS
+
+        const visorModal = document.getElementById('visor-modal');
+        const imagenAmpliada = document.getElementById('imagen-ampliada');
+        const cerrarVisor = document.getElementById('cerrar-visor');
+        const tarjetasFotos = document.querySelectorAll('.columna-noticias article');
+
+        tarjetasFotos.forEach(tarjeta => {
+             tarjeta.addEventListener('click', () => {
+            const foto = tarjeta.querySelector('img');
+               if (foto && visorModal && imagenAmpliada) {
+               imagenAmpliada.src = foto.src;
+               visorModal.classList.add('activo');
+          }
+        });
+        });
+
+        function ocultarVisor() {
+               if (visorModal) {
+               visorModal.classList.remove('activo');
+          }
+          }
+
+          if (cerrarVisor) {
+             cerrarVisor.addEventListener('click', ocultarVisor);
+          }
+
+           if (visorModal) {
+               visorModal.addEventListener('click', (e) => {
+           if (e.target === visorModal) ocultarVisor();
+           });
+           }
+
+          document.addEventListener('keydown', (e) => {
+                 if (e.key === 'Escape') ocultarVisor();
+           });
+
+    </script>
+
+</body>
+</html>

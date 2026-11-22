@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Cecytem Plantel Chalco</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estilos/herramientas.css">
+    <link rel="stylesheet" href="https://fonts.google.com/icons" />
+</head>
+
+<body>
+
+    <!--cabeza de la pagina, aqui estan el logo y el titulo (para dar espacio al menu de opciones, en esta misma se implemento la barra de busquedas)-->
+    <header>
+        <div class="logo-titulo">
+            <div class="marco-logo">
+              <img src="imagenes/logo cecytem.png" />
+            </div>
+            <h1>Cecytem</h1>
+        </div>
+        
+        <div class="buscador">
+            <form action="#" method="get">
+               <input type="search" placeholder="buscar" />
+               <img src="iconos/busqueda.svg" class="icono"/>
+            </form>
+        </div>
+    </header>
+
+    <!--barra de busquedas (menu de busquedas con links al resto de paginas)-->
+
+    <div class="contenido-principal">
+    <aside>
+
+        <details class="menu-desplegable">
+            <summary>
+                  <img src="iconos/menu.svg" class="icono" />
+                <span class="texto">Opciones</span>
+            </summary>
+
+            <nav class="listas-enlaces">
+                <ul>
+                    <li><a href="index.html"><span class="texto">inicio</span></a></li>
+                    <li><a href="institucion.html"><span class="texto">información de la institución</a></span></li>
+                    <li><a href="informacion.html"><span class="texto">información escolar</a></span></li>
+                </ul>
+            </nav>
+        </details>
+
+        <!--Sección de Ajustes -->
+        <details>
+            <summary>
+                <img src="iconos/configuracion.svg" class="icono"/>
+                <span class="texto">Ajustes</span>
+            </summary>
+
+           <div class="contenido-ajustes">
+              <button type="button" id="btn-modo-oscuro">
+                 <img src="iconos/modo.oscuro.svg" alt="" class="icono">
+                 <span class="texto">Modo Oscuro</span>
+              </button>
+           </div>
+        </details> 
+    </aside> 
+
+    <main>
+         <div class="contenedor-herramientas">
+
+                <div class="cabecera-herramientas">
+                    <div>
+                        <h2>Herramientas Digitales y Bibliotecas</h2>
+                        <p>Recursos gratuitos para tus tareas, proyectos gráficos y presentaciones.</p>
+                    </div>
+                    <a href="informacion.html" class="boton-regresar">← Regresar</a>
+                </div>
+
+                <!-- SECCIÓN 1: ESCOLAR -->
+                <section class="bloque-categoria">
+                    <h3>📚 Herramientas Escolares y Diccionarios</h3>
+                    <div class="rejilla-herramientas">
+                        <a href="https://rae.es" target="_blank" class="tarjeta-tool">
+                            <div class="cabecera-tool">
+                                <img src="iconos-app/diccionario-rae.png" alt="Logo RAE">
+                                <h4>Diccionario RAE</h4>
+                            </div>
+                            <p>Consulta definiciones oficiales, ortografía y conjugación de verbos en español.</p>
+                            <span class="etiqueta-tool">Diccionario</span>
+                        </a>
+
+                        <a href="https://www.bidi.unam.mx" target="_blank" class="tarjeta-tool">
+                            <div class="cabecera-tool">
+                                <img src="iconos-app/biblioteca.png" alt="Logo Google Académico">
+                                <h4>Bibloteca UNAM</h4>
+                            </div>
+                            <p>Buscador de libros, tesis y artículos científicos confiables para investigar.</p>
+                            <span class="etiqueta-tool">Biblioteca</span>
+                        </a>
+
+                        <a href="https://scribbr.es" target="_blank" class="tarjeta-tool">
+                            <div class="cabecera-tool">
+                                <img src="iconos-app/generador-appa.png" alt="Logo Scribbr">
+                                <h4>Generador APA 7</h4>
+                            </div>
+                            <p>Crea automáticamente referencias bibliográficas correctas para tus reportes.</p>
+                            <span class="etiqueta-tool">Citas</span>
+                        </a>
+
+                        <a href="https://geogebra.org" target="_blank" class="tarjeta-tool">
+                            <div class="cabecera-tool">
+                                <img src="iconos-app/geogebra.png" alt="Logo GeoGebra">
+                                <h4>GeoGebra</h4>
+                            </div>
+                            <p>Calculadora gráfica interactiva para resolver problemas de álgebra y geometría.</p>
+                            <span class="etiqueta-tool">Matemáticas</span>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- SECCIÓN 2: ARTE Y DISEÑO -->
+                <section class="bloque-categoria">
+                    <h3>🎨 Herramientas de Arte y Edición</h3>
+                    <div class="rejilla-herramientas">
+                        <a href="https://photopea.com" target="_blank" class="tarjeta-tool">
+                            <div class="cabecera-tool">
+                                <img src="iconos-app/photopea.png" alt="Logo Photopea">
+                                <h4>Photopea</h4>
+                            </div>
+                            <p>Editor profesional tipo Photoshop en línea y compatible con capas PSD sin instalar.</p>
+                            <span class="etiqueta-tool">Edición</span>
+                        </a>
+
+                        <a href="https://remove.bg" target="_blank" class="tarjeta-tool">
+                            <div class="cabecera-tool">
+                                <img src="iconos-app/removedor.png" alt="Logo Remove.bg">
+                                <h4>Remove.bg</h4>
+                            </div>
+                            <p>Elimina el fondo de cualquier fotografía o dibujo automáticamente en segundos.</p>
+                            <span class="etiqueta-tool">Recorte</span>
+                        </a>
+
+                        <a href="https://coolors.co" target="_blank" class="tarjeta-tool">
+                            <div class="cabecera-tool">
+                                <img src="iconos-app/paleta-colores.png" alt="Logo Coolors">
+                                <h4>Coolors</h4>
+                            </div>
+                            <p>Generador de paletas de colores armónicas para ilustraciones y carteles.</p>
+                            <span class="etiqueta-tool">Color</span>
+                        </a>
+
+                        <a href="https://krita.org" target="_blank" class="tarjeta-tool">
+                            <div class="cabecera-tool">
+                                <img src="iconos-app/krita.png" alt="Logo Krita">
+                                <h4>Krita</h4>
+                            </div>
+                            <p>Programa gratuito y profesional de pintura digital, cómic e ilustración.</p>
+                            <span class="etiqueta-tool">Ilustración</span>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- SECCIÓN 3: OFIMÁTICA Y PRESENTACIONES -->
+                <section class="bloque-categoria">
+                    <h3>📊 Ofimática, Presentaciones y Esquemas</h3>
+                    <div class="rejilla-herramientas">
+                        <a href="https://canva.com" target="_blank" class="tarjeta-tool">
+                            <div class="cabecera-tool">
+                                <img src="iconos-app/canva.png" alt="Logo Canva">
+                                <h4>Canva</h4>
+                            </div>
+                            <p>Diseña infografías, carteles, folletos y diapositivas con plantillas gratuitas.</p>
+                            <span class="etiqueta-tool">Infografías</span>
+                        </a>
+
+                        <a href="https://office.com" target="_blank" class="tarjeta-tool">
+                            <div class="cabecera-tool">
+                                <img src="iconos-app/microsoft.png" alt="Logo Microsoft 365">
+                                <h4>Microsoft 365 Web</h4>
+                            </div>
+                            <p>Usa Word, PowerPoint y Excel gratis desde tu navegador con tu cuenta escolar.</p>
+                            <span class="etiqueta-tool">Ofimática</span>
+                        </a>
+
+                        <a href="https://goconqr.com" target="_blank" class="tarjeta-tool">
+                            <div class="cabecera-tool">
+                                <img src="iconos-app/mapa-mental.png" alt="Logo GoConqr">
+                                <h4>GoConqr</h4>
+                            </div>
+                            <p>Crea mapas mentales, fichas de estudio y esquemas conceptuales fácilmente.</p>
+                            <span class="etiqueta-tool">Mapas Mentales</span>
+                        </a>
+
+                        <a href="https://ilovepdf.com" target="_blank" class="tarjeta-tool">
+                            <div class="cabecera-tool">
+                                <img src="iconos-app/pdf.png" alt="Logo iLovePDF">
+                                <h4>iLovePDF</h4>
+                            </div>
+                            <p>Une, comprime, divide o convierte documentos PDF a Word y PowerPoint.</p>
+                            <span class="etiqueta-tool">Documentos</span>
+                        </a>
+                    </div>
+    </main>
+    
+
+
+ <script src="script.js"></script> 
+
+    
+
+</body>
+</html>

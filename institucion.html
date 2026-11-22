@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Cecytem Plantel Chalco</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estilos/institucion.css">
+    <link rel="stylesheet" href="https://fonts.google.com/icons" />
+</head>
+
+<body>
+
+    <!--cabeza de la pagina, aqui estan el logo y el titulo (para dar espacio al menu de opciones, en esta misma se implemento la barra de busquedas)-->
+    <header>
+        <div class="logo-titulo">
+            <div class="marco-logo">
+              <img src="imagenes/logo cecytem.png" />
+            </div>
+            <h1>Cecytem</h1>
+        </div>
+        
+        <div class="buscador">
+            <form action="#" method="get">
+               <input type="search" placeholder="buscar" />
+               <img src="iconos/busqueda.svg" class="icono"/>
+            </form>
+        </div>
+    </header>
+
+    <!--barra de busquedas (menu de busquedas con links al resto de paginas)-->
+
+    <div class="contenido-principal">
+    <aside>
+
+        <details class="menu-desplegable">
+            <summary>
+                  <img src="iconos/menu.svg" class="icono" />
+                <span class="texto">Opciones</span>
+            </summary>
+
+            <nav class="listas-enlaces">
+                <ul>
+                    <li><a href="index.html"><span class="texto">inicio</span></a></li>
+                    <li><a href="institucion.html"><span class="texto">información de la institución</a></span></li>
+                    <li><a href="informacion.html"><span class="texto">información escolar</a></span></li>
+                </ul>
+            </nav>
+        </details>
+
+        <!--Sección de Ajustes -->
+        <details>
+            <summary>
+                <img src="iconos/configuracion.svg" class="icono"/>
+                <span class="texto">Ajustes</span>
+            </summary>
+
+           <div class="contenido-ajustes">
+              <button type="button" id="btn-modo-oscuro">
+                 <img src="iconos/modo.oscuro.svg" alt="" class="icono">
+                 <span class="texto">Modo Oscuro</span>
+              </button>
+           </div>
+        </details> 
+    </aside> 
+
+    <main>
+        
+        <div class="contenedor-institucional" >
+
+            <section class="presentacion">
+                <img src="imagenes/PAG CHALCO.png"/>
+                <div class="texto">
+                    <h2>Cecytem Plantel Chalco</h2>
+                    <p>Te damos la bienvenida al cecytem plantel chalco, el colegio de estudios tecnologicos de chalco donde podras estudiar en nuestro sistema bivalente.<br>
+                        Egresa en 3 años con tu <strong>certificado de preparatoria</strong> y tu <strong>título profesional técnico</strong>.</p>
+                </div>
+            </section>
+
+            <section class="oferta">
+                <div class="texto">
+                    <h3>Oferta Educativa e Instalaciones</h3>
+                    <p><strong>Carrera:</strong> Técnico en Diseño Gráfico Digital.</p>
+                    <p><strong>Espacios:</strong> Salas de cómputo equipadas, aulas multimedia y áreas deportivas en turno vespertino.</p>
+                    <p><strong>Beneficios:</strong> Acceso a Beca Universal, talleres culturales y prácticas profesionales.</p>
+                </div>
+                <img src="imagenes/sala de computo desenfoque.png"/>            
+            </section>
+
+            <section class="MVV">
+                <div class="columna">
+                    <h3>Misión</h3>
+                    <p>Formar técnicos bachilleres competentes con educación tecnológica y humanista de calidad.</p>
+                </div>
+
+                <div class="columna">
+                    <h3>Visión</h3>
+                    <p>Ser una institución líder en excelencia académica e innovación en el Estado de México.</p>
+                </div>
+
+                <div class="columna">
+                    <h3>Valores</h3>
+                    <p>Responsabilidad, honestidad, respeto, disciplina y compromiso social.</p>
+                </div>
+            </section>
+
+            <section class="contacto">
+                <div class="mapa">
+                    <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3766.8184818583727!2d-98.90482519999999!3d19.2467411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce194857c533af%3A0xccddf37688e4d4e7!2sCECyTEM%20Plantel%20Chalco!5e0!3m2!1ses-419!2smx!4v1794968545094!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Ubicacion Cecytem Plantel Chalco">
+                </iframe>
+                </div> 
+
+                <div class="texto">
+                    <h3>Ubicación y medios de contacto</h3>
+                    <p>Nos encontramos en <strong>Carretera Federal Chalco–Mixquic, esquina Portal del Sol S/N, U.H. Villas Chalco, C.P. 56600, Chalco, Estado de México</strong>.</p>
+                    <p>Para informes o atención directa, selecciona cualquiera de nuestros canales oficiales:</p>
+
+                    <div class="iconos-social">
+                        <a href="https://www.facebook.com/CecytemPlantelChalco/?locale=es_LA" target="_blank" class="icono-f" title="icono de faceboock">
+                            <img src="iconos/icono faceboock.png" alt="facebook"/>
+                        </a>
+
+                        <a href="mailto:plantel.chalco@cecytem.mx" target="_blank" class="icono-g" title="icono de gmail">
+                            <img src="iconos/icono gmail.png"/>
+                        </a>
+
+                        <a href="tel:5559751655" class="circulo-social telefono" title="Llamar al 55 59 75 16 55">
+                            <img src="iconos/icono wasap.png" alt="Llamar por teléfono">
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>     
+    </main>
+    
+    <!-- Caja oculta del visor (si falta esto, no abre) -->
+<div id="visor-modal" class="visor-modal">
+    <button type="button" id="cerrar-visor" class="cerrar-visor">&times;</button>
+    <img id="imagen-ampliada" class="imagen-ampliada" src="" alt="Foto ampliada">
+</div>
+
+<script src="script.js"></script>
+
+
+<script>
+    const visorModal = document.getElementById('visor-modal');
+    const imagenAmpliada = document.getElementById('imagen-ampliada');
+    const cerrarVisor = document.getElementById('cerrar-visor');
+    const fotosInstitucion = document.querySelectorAll('.presentacion img, .oferta img');
+
+    if (visorModal && imagenAmpliada) {
+        fotosInstitucion.forEach(foto => {
+            foto.addEventListener('click', () => {
+                imagenAmpliada.src = foto.src;
+                visorModal.classList.add('activo');
+            });
+        });
+
+        function ocultarVisor() {
+            visorModal.classList.remove('activo');
+        }
+
+        if (cerrarVisor) {
+            cerrarVisor.addEventListener('click', ocultarVisor);
+        }
+
+        visorModal.addEventListener('click', (e) => {
+            if (e.target === visorModal) ocultarVisor();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') ocultarVisor();
+        });
+    }
+</script>
+
+</body>
+</html>

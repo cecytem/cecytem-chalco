@@ -1,0 +1,230 @@
+/* =========================================
+   ESTILOS PÁGINA 2: INSTITUCIÓN (CSS SIMPLE)
+   ========================================= */
+
+.contenedor-institucional {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/* Cajas principales en zig-zag */
+.presentacion,
+.oferta,
+.contacto {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    background-color: #ffffff;
+    padding: 28px;
+    border-radius: 16px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* Invierte el orden en Oferta */
+.oferta {
+    flex-direction: row-reverse;
+}
+
+/* Fotos con interacción al pasar el mouse y clic para ampliar */
+.presentacion > img,
+.oferta > img {
+    width: 45%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: zoom-in;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.presentacion > img:hover,
+.oferta > img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 104, 55, 0.25);
+}
+
+/* Estructura y buen estilo para las palabras */
+.contenedor-institucional .texto {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.contenedor-institucional h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #006837;
+    letter-spacing: 0.3px;
+    border-bottom: 3px solid #e8f5e9;
+    padding-bottom: 8px;
+}
+
+.contenedor-institucional h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #006837;
+}
+
+.contenedor-institucional p {
+    font-size: 16px;
+    line-height: 1.7; /* Da aire entre renglones para leer cómodo */
+    color: #333333;
+}
+
+.contenedor-institucional strong {
+    color: #006837;
+    font-weight: 600;
+}
+
+/* Sección Misión, Visión y Valores (MVV) */
+.MVV {
+    display: flex;
+    gap: 20px;
+    background-color: #ffffff;
+    padding: 28px;
+    border-radius: 16px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.MVV .columna {
+    flex: 1;
+    background-color: #f8f9fa;
+    padding: 22px;
+    border-radius: 12px;
+    border-top: 4px solid #006837;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.MVV .columna:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0, 104, 55, 0.12);
+}
+
+.MVV h3 {
+    margin-bottom: 10px;
+}
+
+/* Mapa incrustado */
+.contacto .mapa {
+    width: 48%;
+    height: 280px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #e0e0e0;
+}
+
+.contacto .mapa iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Íconos sociales circulares sin cortarse */
+.iconos-social {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 8px;
+}
+
+.iconos-social a {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%; /* Círculo perfecto */
+    background-color: #f4f6f5;
+    padding: 11px;      /* Evita que el logo toque o corte los bordes */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #e0e0e0;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.iconos-social a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Muestra el logo completo sin recortar */
+    display: block;
+}
+
+/* Interacción al pasar el mouse en cada ícono */
+.iconos-social a:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.iconos-social .icono-f:hover {
+    border-color: #1877f2;
+}
+
+.iconos-social .icono-g:hover {
+    border-color: #ea4335;
+}
+
+.iconos-social .telefono:hover {
+    border-color: #25d366;
+}
+
+/* --- Modo Oscuro --- */
+body.modo-oscuro .presentacion,
+body.modo-oscuro .oferta,
+body.modo-oscuro .MVV,
+body.modo-oscuro .contacto {
+    background-color: #1e1e1e;
+    border-color: #333333;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+body.modo-oscuro .MVV .columna {
+    background-color: #262626;
+    border-top-color: #4ade80;
+}
+
+body.modo-oscuro .contenedor-institucional h2 {
+    color: #4ade80;
+    border-bottom-color: #1b3828;
+}
+
+body.modo-oscuro .contenedor-institucional h3,
+body.modo-oscuro .contenedor-institucional strong {
+    color: #4ade80;
+}
+
+body.modo-oscuro .contenedor-institucional p {
+    color: #e4e6eb;
+}
+
+body.modo-oscuro .iconos-social a {
+    background-color: #2a2a2a;
+    border-color: #444444;
+}
+
+/* --- Adaptación a Tablet y Teléfono --- */
+@media (max-width: 850px) {
+    .presentacion,
+    .oferta,
+    .MVV,
+    .contacto {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .presentacion > img,
+    .oferta > img,
+    .contacto .mapa {
+        width: 100%;
+        height: 230px;
+    }
+
+    .contenedor-institucional h2 {
+        font-size: 26px;
+    }
+}
+

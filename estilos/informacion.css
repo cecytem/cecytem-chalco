@@ -1,0 +1,194 @@
+
+.contenedor-escolar {
+    width: 100%;
+    max-width: 880px; /* Ancho equilibrado para que la altura automática no se vea gigante */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+/* Tarjeta contenedora elegante (adaptable a modo claro y oscuro) */
+.boton-banner {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 18px;
+    border: 2px solid #d8e2dc;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Muestra tu diseño al 100% sin recortar letras ni íconos */
+.boton-banner img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    transition: transform 0.4s ease, filter 0.3s ease;
+}
+
+.boton-banner:hover {
+    transform: translateY(-5px);
+    border-color: #006837;
+    box-shadow: 0 14px 28px rgba(0, 104, 55, 0.25);
+}
+
+.boton-banner:hover img {
+    transform: scale(1.02);
+    filter: brightness(1.04);
+}
+
+/* Etiqueta flotante con borde sutil para que resalte sobre cualquier dibujo */
+.aviso-clic {
+    position: absolute;
+    bottom: 22px;
+    right: 22px;
+    background-color: rgba(0, 104, 55, 0.94);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 7px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* --- Modo Oscuro (Elimina cualquier borde blanco) --- */
+body.modo-oscuro .boton-banner {
+    background-color: #1e1e1e;
+    border-color: #2f3e34;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+body.modo-oscuro .boton-banner:hover {
+    border-color: #4ade80;
+    box-shadow: 0 12px 30px rgba(74, 222, 128, 0.22);
+}
+
+
+/* Fila de 2 cuadros-botón inferiores (Avisos y Calendario) */
+.fila-dos {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly; /* Los reparte equitativamente en todo el ancho */
+    align-items: center;
+    gap: 24px;
+}
+
+.boton-cuadro {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 210px;  /* Mismo ancho y alto para que sea cuadrado perfecto */
+    height: 210px;
+    background-color: #ffffff;
+    padding: 22px;
+    border-radius: 18px;
+    border: 1px solid rgba(0, 104, 55, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.boton-cuadro img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.boton-cuadro:hover {
+    border-color: #006837;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 26px rgba(0, 104, 55, 0.25);
+}
+
+.boton-cuadro:hover img {
+    transform: scale(1.05);
+}
+
+body.modo-oscuro .boton-cuadro {
+    background-color: #1e1e1e;
+    border-color: rgba(74, 222, 128, 0.25);
+}
+
+/* Etiqueta flotante en la esquina inferior derecha de cada imagen-botón */
+.aviso-clic {
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    background-color: rgba(0, 104, 55, 0.92);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 7px 15px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contacto-escolar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+    padding: 20px 0 30px 0;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.contacto-escolar .iconos-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
+}
+
+.contacto-escolar .iconos-social a {
+    width: 80px !important;
+    height: 80px !important;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 2px solid rgba(0, 104, 55, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contacto-escolar .iconos-social a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.contacto-escolar .iconos-social a:hover {
+    transform: translateY(-5px) scale(1.08);
+    border-color: #006837;
+    box-shadow: 0 10px 22px rgba(0, 104, 55, 0.25);
+}
+
+/* Modo Oscuro para los círculos grandes */
+body.modo-oscuro .contacto-escolar .iconos-social a {
+    background-color: #1e1e1e;
+    border-color: rgba(74, 222, 128, 0.3);
+}
+
+body.modo-oscuro .contacto-escolar .iconos-social a:hover {
+    border-color: #4ade80;
+    box-shadow: 0 10px 22px rgba(74, 222, 128, 0.2);
+}
+
+

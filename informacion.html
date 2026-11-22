@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Cecytem Plantel Chalco</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estilos/informacion.css">
+    <link rel="stylesheet" href="https://fonts.google.com/icons" />
+</head>
+
+<body>
+
+    <!--cabeza de la pagina, aqui estan el logo y el titulo (para dar espacio al menu de opciones, en esta misma se implemento la barra de busquedas)-->
+    <header>
+        <div class="logo-titulo">
+            <div class="marco-logo">
+              <img src="imagenes/logo cecytem.png" />
+            </div>
+            <h1>Cecytem</h1>
+        </div>
+        
+        <div class="buscador">
+            <form action="#" method="get">
+               <input type="search" placeholder="buscar" />
+               <img src="iconos/busqueda.svg" class="icono"/>
+            </form>
+        </div>
+    </header>
+
+    <!--barra de busquedas (menu de busquedas con links al resto de paginas)-->
+
+    <div class="contenido-principal">
+    <aside>
+
+        <details class="menu-desplegable">
+            <summary>
+                  <img src="iconos/menu.svg" class="icono" />
+                <span class="texto">Opciones</span>
+            </summary>
+
+            <nav class="listas-enlaces">
+                <ul>
+                    <li><a href="index.html"><span class="texto">inicio</span></a></li>
+                    <li><a href="institucion.html"><span class="texto">información de la institución</a></span></li>
+                    <li><a href="informacion.html"><span class="texto">información escolar</a></span></li>
+                </ul>
+            </nav>
+        </details>
+
+        <!--Sección de Ajustes -->
+        <details>
+            <summary>
+                <img src="iconos/configuracion.svg" class="icono"/>
+                <span class="texto">Ajustes</span>
+            </summary>
+
+           <div class="contenido-ajustes">
+              <button type="button" id="btn-modo-oscuro">
+                 <img src="iconos/modo.oscuro.svg" alt="" class="icono">
+                 <span class="texto">Modo Oscuro</span>
+              </button>
+           </div>
+        </details> 
+    </aside> 
+
+    <main>
+        <div class="contenedor-escolar">
+
+            <section class="becas">
+                <a href="https://www.gob.mx/becasbenitojuarez" target="_blank" class="boton-banner">
+                    <img src="img-botones/beca-banner.png" />
+                    <span class="aviso-clic">Ir al portal de Becas ↗</span>
+                </a>
+            </section>
+
+            <section>
+                <a href="eventos.html" class="boton-banner">
+                    <img src="img-botones/eventos-escolares.png">
+                    <span class="aviso-clic">Ver Eventos y Video →</span>
+                </a>
+            </section>
+
+            <section class="herramientas">
+                <a href="herramientas.html" class="boton-banner">
+                    <img src="img-botones/banner-herramientas.png"/>
+                    <span class="aviso-clic">Abrir Herramientas →</span>
+                </a>
+            </section>
+
+            <section class="fila-dos">
+                <a href="avisos.html" class="boton-cuadro">
+                    <img src="img-botones/avisos.png"/>
+                    <span class="aviso-clic">Ver Avisos →</span>
+                </a>
+
+                <a href="https://cecytem.edomex.gob.mx/calendario_escolar" target="_blank" class="boton-cuadro">
+                    <img src="img-botones/calendario.png"/>
+                    <span class="aviso-clic">Abrir Calendario ↗</span>
+                </a>
+            </section>
+
+            <section class="contacto-escolar">
+                    <div class="iconos-social">
+                        <a href="https://www.facebook.com/CecytemPlantelChalco/?locale=es_LA" target="_blank" class="icono-f" title="icono de faceboock">
+                            <img src="iconos/icono faceboock.png" alt="facebook"/>
+                        </a>
+
+                        <a href="mailto:plantel.chalco@cecytem.mx" target="_blank" class="icono-g" title="icono de gmail">
+                            <img src="iconos/icono gmail.png"/>
+                        </a>
+
+                        <a href="tel:5559751655" class="circulo-social telefono" title="Llamar al 55 59 75 16 55">
+                            <img src="iconos/icono wasap.png" alt="Llamar por teléfono">
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+           
+    </main>
+    
+    
+
+<script src="script.js"></script>
+
+</body>
+</html>
